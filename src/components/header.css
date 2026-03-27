@@ -1,0 +1,82 @@
+/* Burger — hidden on desktop */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+    padding: 4px;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-menu.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.burger-menu.open span:nth-child(2) { opacity: 0; }
+.burger-menu.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+.mobile-only { display: none; }
+/* Mobile only */
+@media (max-width: 768px) {
+    .desktop-only { display: none !important; }
+    .mobile-only { display: flex; }
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-wrapper {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: stretch;        /* ✅ full width children */
+        gap: 10px;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .nav-wrapper.open {
+        max-height: 300px;
+        opacity: 1;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Full width buttons */
+    .nav-wrapper button {
+        transform: none !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Input + Confirm row */
+    .import-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .import-row input {
+        flex: 1;          /* ✅ input takes remaining space */
+    }
+
+    .import-row button {
+        width: auto !important;   /* ✅ Confirm button stays its natural size */
+    }
+}
