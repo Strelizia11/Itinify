@@ -17,14 +17,6 @@ function Header() {
         }
         setIsMenuOpen(false); // ✅ close menu on navigate
     }
-    const baseButtonStyle = {
-        padding: '8px 16px',
-        borderRadius: '6px',
-        cursor: 'pointer',
-        border: '1px solid #ddd',
-        fontWeight: '500',
-        transition: 'all 0.4s ease-in-out',
-    };
     return (
         <>
             {/* ✅ overlay — tap outside to close */}
@@ -51,7 +43,6 @@ function Header() {
                     <div className="desktop-only" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                         <button className='baseButtonStyle'
                             style={{
-                                ...baseButtonStyle,
                                 backgroundColor: isImportMoved ? '#6c757d' : '#f9f9f9',
                                 color: isImportMoved ? 'white' : 'black',
                                 transform: isImportMoved ? 'translateX(-230px)' : 'translateX(0)',
@@ -76,18 +67,18 @@ function Header() {
                                 placeholder="Code..." 
                                 style={{ padding: '8px', width: '120px', borderRadius: '4px', border: '1px solid #ccc' }} 
                             />
-                            <button style={{ ...baseButtonStyle, backgroundColor: '#28a745', color: 'white' }}>
+                            <button className="baseButtonStyle" style={{ backgroundColor: '#28a745', color: 'white' }}>
                                 Confirm
                             </button>
                         </div>
                     </div>
 
-                    <button className="desktop-only" style={{ ...baseButtonStyle, border: 'none', backgroundColor: isCreatePage ? '#333' : '#007bff', color: 'white' }} onClick={handleCreateForm}>
+                    <button className="desktop-only baseButtonStyle" style={{  border: 'none', backgroundColor: isCreatePage ? '#333' : '#007bff', color: 'white' }} onClick={handleCreateForm}>
                         {isCreatePage ? 'Home' : 'Create'}
                     </button>
 
                     {/* ── Mobile dropdown items ── */}
-                    <button className="mobile-only" style={{ ...baseButtonStyle, backgroundColor: '#6c757d', color: 'white', border: 'none' }}>
+                    <button className="mobile-only baseButtonStyle" style={{  backgroundColor: '#6c757d', color: 'white', border: 'none' }}>
                         Scan
                     </button>
 
@@ -97,12 +88,12 @@ function Header() {
                             placeholder="Code..." 
                             style={{ padding: '8px 20px', borderRadius: '4px', border: '1px solid #ccc' }} 
                         />
-                        <button style={{ ...baseButtonStyle, backgroundColor: '#28a745', color: 'white', padding: '8px 30px'}}>
+                        <button className="baseButtonStyle" style={{  backgroundColor: '#28a745', color: 'white', padding: '8px 30px'}}>
                             Confirm
                         </button>
                     </div>
 
-                    <button className="mobile-only" style={{ ...baseButtonStyle, border: 'none', backgroundColor: isCreatePage ? '#333' : '#007bff', color: 'white', textAlign:'center' }} onClick={handleCreateForm}>
+                    <button className="mobile-only baseButtonStyle" style={{ border: 'none', backgroundColor: isCreatePage ? '#333' : '#007bff', color: 'white', textAlign:'center' }} onClick={handleCreateForm}>
                         {isCreatePage ? 'Home' : 'Create'}
                     </button>
 
