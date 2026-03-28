@@ -1,4 +1,22 @@
 /* Burger — hidden on desktop */
+.baseButtonStyle{
+    padding: 8px 16px;
+    border-Radius: 6px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    font-Weight: 500;
+    transition: all 0.4s ease-in-out;
+}
+.headerStyle{
+    display: flex;
+    justify-Content: space-between;
+    align-Items: center;
+    padding: 1rem 2rem;
+    background-Color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative; 
+    z-Index: 100;
+}
 .burger-menu {
     display: none;
     flex-direction: column;
@@ -26,7 +44,7 @@
 /* Mobile only */
 @media (max-width: 768px) {
     .desktop-only { display: none !important; }
-    .mobile-only { display: flex; }
+    .mobile-only { display: flex; justify-content: center;align-items: center;}
     .burger-menu {
         display: flex;
     }
@@ -70,13 +88,17 @@
         display: flex;
         gap: 8px;
         align-items: center;
+        width: 100%;
     }
 
     .import-row input {
-        flex: 1;          /* ✅ input takes remaining space */
+        flex: 7;
+        padding: 10px;
+        width: 100%;          /* ✅ input takes remaining space */
     }
 
     .import-row button {
-        width: auto !important;   /* ✅ Confirm button stays its natural size */
+        flex: 3;
+        padding: 10px;   /* ✅ Confirm button stays its natural size */
     }
 }

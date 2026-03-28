@@ -17,16 +17,6 @@ function Header() {
         }
         setIsMenuOpen(false); // ✅ close menu on navigate
     }
-    const headerStyle = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '1rem 2rem',
-        backgroundColor: '#fff',
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-        position: 'relative', // ✅ needed for absolute dropdown
-        zIndex: 100,
-    };
     const baseButtonStyle = {
         padding: '8px 16px',
         borderRadius: '6px',
@@ -40,7 +30,7 @@ function Header() {
             {/* ✅ overlay — tap outside to close */}
             {isMenuOpen && <div className="nav-overlay" onClick={() => setIsMenuOpen(false)} />}
 
-            <header style={headerStyle}>
+            <header className="headerStyle">
                 <h1>Itinify</h1>
 
                 {/* ✅ burger button — hidden on desktop via CSS */}
@@ -59,7 +49,7 @@ function Header() {
 
                     {/* ── Desktop view (unchanged) ── */}
                     <div className="desktop-only" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-                        <button 
+                        <button className='baseButtonStyle'
                             style={{
                                 ...baseButtonStyle,
                                 backgroundColor: isImportMoved ? '#6c757d' : '#f9f9f9',
@@ -112,7 +102,7 @@ function Header() {
                         </button>
                     </div>
 
-                    <button className="mobile-only" style={{ ...baseButtonStyle, border: 'none', backgroundColor: isCreatePage ? '#333' : '#007bff', color: 'white' }} onClick={handleCreateForm}>
+                    <button className="mobile-only" style={{ ...baseButtonStyle, border: 'none', backgroundColor: isCreatePage ? '#333' : '#007bff', color: 'white', textAlign:'center' }} onClick={handleCreateForm}>
                         {isCreatePage ? 'Home' : 'Create'}
                     </button>
 
