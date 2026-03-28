@@ -1,4 +1,3 @@
-/* Burger — hidden on desktop */
 .baseButtonStyle{
     padding: 8px 16px;
     border-Radius: 6px;
@@ -12,9 +11,13 @@
     justify-Content: space-between;
     align-Items: center;
     padding: 1rem 2rem;
-    background-Color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative; 
+    background-Color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    border-radius: 50px;
     z-Index: 100;
 }
 .burger-menu {
@@ -60,6 +63,10 @@
         gap: 10px;
         padding: 1rem 2rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        margin-top: 1rem;
+        background-Color: rgba(255, 255, 255, 0.2);
+
 
         max-height: 0;
         overflow: hidden;

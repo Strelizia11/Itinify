@@ -19,13 +19,13 @@ function Header() {
     }
     return (
         <>
-            {/* ✅ overlay — tap outside to close */}
+            {/* overlay — tap outside to close */}
             {isMenuOpen && <div className="nav-overlay" onClick={() => setIsMenuOpen(false)} />}
 
             <header className="headerStyle">
                 <h1>Itinify</h1>
 
-                {/* ✅ burger button — hidden on desktop via CSS */}
+                {/* burger button — hidden on desktop via CSS */}
                 <button
                     className={`burger-menu ${isMenuOpen ? 'open' : ''}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -36,10 +36,8 @@ function Header() {
                     <span />
                 </button>
                 
-                {/* ✅ only added className here, nothing else changed */}
                 <nav className={`nav-wrapper ${isMenuOpen ? 'open' : ''}`} style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
 
-                    {/* ── Desktop view (unchanged) ── */}
                     <div className="desktop-only" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                         <button className='baseButtonStyle'
                             style={{
